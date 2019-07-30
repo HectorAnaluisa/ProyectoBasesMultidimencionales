@@ -1,0 +1,31 @@
+{
+  "query": {
+    "match": {
+      "doc.text": {
+        "query": "minecraft"
+      }
+    }
+  }
+}
+
+
+
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "match": {
+            "doc.text": "minecraft"
+          }
+        },
+        {
+          "match": {
+            "doc.text": "League of Legends"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+}
